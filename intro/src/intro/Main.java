@@ -20,7 +20,7 @@ public class Main {
 			
 			boolean dolarDustuMu = false;
 			
-			String okYonu = "";
+			String okYonu = "";   //empty
 			
 			if (dolarBugun<dolarDun) {  //true
 				okYonu = "down.svg";
