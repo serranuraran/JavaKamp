@@ -1,33 +1,38 @@
 package kodlama.io.rentACar.entities.concretes;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Table(name="brands")  //veritabanında brans tablosuna ata. yani bu bir tablodur ve ismi de brands'tir. postgresql deki brands tablosuna karşılık gelecek
+@Getter
+@Setter
+//@Data  --@getter ve @setter ın toplamı
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity   //sen bir veritabanı varlığısın
 public class Brand {
-	private int id;
-	private String name;
 	
-	public Brand() {
+	@Id   //sen veritabanında primary key alanısın
+	@GeneratedValue(strategy = GenerationType.IDENTITY)   //ıd si otomatik artan
+	@Column(name="id")
+	private int id;
+	
+	@Column(name="name")
+	private String name;
 		
-	}
-
-	public Brand(int id, String name) {
-		
-		this.id = id;
-		this.name = name;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
 	
 }
+
+
+//Brand-->id,name,quantity
+//GetAllBrandsResponse-->id,name
+//mapping

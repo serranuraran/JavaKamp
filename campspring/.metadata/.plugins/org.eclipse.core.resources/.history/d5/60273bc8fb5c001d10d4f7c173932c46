@@ -1,0 +1,19 @@
+package kodlama.io.rentACar.entities.concretes;
+
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+
+@Table(name="brands")  //veritabanında brans tablosuna ata. yani bu bir tablodur ve ismi de brands'tir. postgresql deki brands tablosuna karşılık gelecek
+@Getter
+@Data
+@AllArgsConstructor
+public class Brand {
+	private int id;
+	private String name;
+	
+	
+	
+}
